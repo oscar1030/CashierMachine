@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cashier Machine</title>
+    <script defer src="script.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body id="miPagina">
+    <header id="loginUsuario" class="container">
+        <div class="input-group mb-3 row">
+            <label for="usuarios" id="labelUsuarios">Quién ingresa?</label>
+            <select name="usuarios" id="usuarios" class="form-select" aria-label="Default select example">
+            </select>   
+            <br>
+            <label for="claveUsuario">Su clave:</label>
+            <input class="form-control" type="password" name="claveUsuario" id="claveUsuario" min="4" max="4">
+        </div>
+        <br>
+        <div>
+            <input  class = "btn btn-primary" type="button" id="btnIngresarLogin" value="Ingresar" onclick="Login()">
+            <input class = "btn btn-secondary" type="button" id="btnCancelarLogin" value="Cancelar" onclick="inicio()">
+        </div>
+    </header>
+    <section id="datosUsuario" class="container">
+        <article id="consultaSaldo">
+            <div id="saldoUsuario">
+            </div>
+            <div id="ultimaTransaccion">
+
+            </div>
+        </article>
+        <article id="articuloTransaccion">
+            <div>
+                <p>Qué transacción desea realizar?</p> 
+                <input type="button" id="btnConsignar" value="Consignar" onclick="mostrarConsignar()">
+                <input type="button" id="btnRetirar" value="Retirar" onclick="mostrarRetirar()">
+            </div>
+            <div>
+                <p> </p><input type="button" id="btnFinSesion" value="Finalizar Sesión" onclick="inicio()"></p>
+            </div>
+        </article>
+    </section>    
+    <section id="seccionConsignar" class="container">
+        <div>
+            <label for="txtConsignar">Valor a consignar</label>
+            <input class="form-control" type="number" name="txtConsignar" id="txtConsignar">
+            <input class = "btn btn-primary" type="button" id="btnAceptaConsignar" value="Aceptar" onclick="Consignar()">
+            <input class = "btn btn-secondary"  type="button" id="btnCancelaConsignar" value="Cancelar" onclick="cancelarConsignar()">            
+        </div>
+    </section>
+    <section id="seccionRetirar" class="container">
+        <label for="txtRetirar">Valor a retirar</label>
+        <input class="form-control" type="number" name="txtRetirar" id="txtRetirar">
+        <input class = "btn btn-primary" type="button" id="btnAceptaRetirar" value="Aceptar" onclick="Retirar()">
+        <input class = "btn btn-secondary"  type="button" id="btnCancelaRetirar" value="Cancelar" onclick="cancelarRetirar()">        
+    </section>
+    <div id="mensajeError" class="container"></div>
+    <section id="datosOcultos">
+        <input type="" id="usuarioSesion">
+    </section>
+</body>
+</html>
